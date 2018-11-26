@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>calculator</title>
 </head>
-<script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
@@ -12,9 +11,12 @@
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="calc.js"></script>
+
 <style>
 
+    body{
+        background-color: black;
+    }
     html {
         font-size: 62.5%;
         box-sizing: border-box;
@@ -34,15 +36,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 400px;
+        background-color: azure;
     }
 
     .calculator-screen {
         width: 100%;
         font-size: 5rem;
         height: 80px;
-        border: none;
-        background-color: #252525;
-        color: #fff;
+        border: white;
+        background-color: white;
+        color: black;
         text-align: right;
         padding-right: 20px;
         padding-left: 10px;
@@ -97,43 +100,54 @@
         grid-gap: 20px;
         padding: 20px;
     }
+    .sign{
+        background-color: cadetblue;
+        width: 100%;
+        alignment: bottom;
+        text-align: center;
+    }
         </style>
 <body>
 
-<div class="calculator container-fluid"
+<div class="calculator container-fluid">
 
-    <input type="text" class="calculator-screen" value="0" disabled />
+    <input type="text" class="calculator-screen" value="0" id="output"  />
 
     <div class="calculator-keys">
 
-        <button type="button" class="operator" value="+">+</button>
-        <button type="button" class="operator" value="-">-</button>
-        <button type="button" class="operator" value="*">&times;</button>
-        <button type="button" class="operator" value="/">&divide;</button>
+        <button type="button" class="operator" value="+" id="add" onclick="appendto('+')">+</button>
+        <button type="button" class="operator" value="-" id="sub" onclick="appendto('-')">-</button>
+        <button type="button" class="operator" value="*" id="mul" onclick="appendto('*')">&times;</button>
+        <button type="button" class="operator" value="/" id="divide" onclick="appendto('/')">&divide;</button>
 
-        <button type="button" value="7">7</button>
-        <button type="button" value="8">8</button>
-        <button type="button" value="9">9</button>
-
-
-        <button type="button" value="4">4</button>
-        <button type="button" value="5">5</button>
-        <button type="button" value="6">6</button>
+        <button type="button" value="7" id="seven" onclick="appendto(7)">7</button>
+        <button type="button" value="8" id="eight" onclick="appendto(8)">8</button>
+        <button type="button" value="9" id="nine" onclick="appendto(9)">9</button>
 
 
-        <button type="button" value="1">1</button>
-        <button type="button" value="2">2</button>
-        <button type="button" value="3">3</button>
+        <button type="button" value="4" id="four" onclick="appendto(4)">4</button>
+        <button type="button" value="5" id="five" onclick="appendto(5)">5</button>
+        <button type="button" value="6" id="six" onclick="appendto(6)">6</button>
 
 
-        <button type="button" value="0">0</button>
-        <button type="button" class="decimal" value=".">.</button>
-        <button type="button" class="all-clear" value="all-clear">AC</button>
+        <button type="button" value="1" id="one" onclick="appendto(1)">1</button>
+        <button type="button" value="2" id="two" onclick="appendto(2)">2</button>
+        <button type="button" value="3" id="three" onclick="appendto(3)">3</button>
 
-        <button type="button" class="equal-sign operator" value="=">=</button>
+
+        <button type="button" value="0" id="zero" onclick="appendto(0)">0</button>
+        <button type="button" class="decimal" value="." id="decimal" onclick="appendto('.')">.</button>
+        <button type="button" class="all-clear" value="all-clear" id="clr" onclick="reset()">AC</button>
+
+        <button type="button" class="equal-sign operator" value="=" id="equal" onclick="final()">=</button>
 
     </div>
 </div>
-
+<footer class="sign">
+    <p>Posted by: <b>Archit Agarwal</b></p>
+    <p>Contact<a href="mailto:architatul@gmail.com">
+        architatul@gmail.com</a></p>
+</footer>
+<script src="calc.js"></script>
 </body>
 </html>
